@@ -3,12 +3,15 @@ new Vue({
 
   data: {
     project: { name: ''},
-    projects: []
+    projects: [],
+    build: { id: '', state: '', inserted_at: '', updated_at: ''},
+    builds: []
 
   },
 
   ready: function () {
     this.fetchProjects();
+    this.fetchBuilds();
   },
 
   methods: {
@@ -19,6 +22,17 @@ new Vue({
         .success(function (projects) {
           this.$set('projects', projects);
           console.log(projects);
+        })
+        .error(function (err) {
+          console.log(err);
+        });
+    },
+    fetchBuilds: function () {
+      var builds = [];
+      this.$http.get('http://localhost:4000/api/v1/default/bld/all')
+        .success(function (builds) {
+          this.$set('builds', builds);
+          console.log(builds);
         })
         .error(function (err) {
           console.log(err);

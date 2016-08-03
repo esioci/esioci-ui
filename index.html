@@ -17,22 +17,51 @@
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <a class="navbar-brand">Esio CI</a>
+      <div class="navbar-header">
+        <a class="navbar-brand">Esio CI</a>
+      </div>
     </div>
   </nav>
   <div class="container" id="esioci">
-    <div class="col-sm-7">
+    <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3>Builds list</h3>
+          Builds list
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>status</th>
+                <th>build start</th>
+                <th>last update</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="build in builds">
+                <td>{{ build.id }}</td>
+                <td>{{ build.state }}</td>
+                <td>{{ build.inserted_at }}</td>
+                <td>{{ build.updated_at }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    <div class="col-sm-5">
-      <div class="list-group">
-        <a href="#" class="list-group-item" v-for="project in projects">
-          <h4 class="list-group-item-heading">{{ project.name }}</h4>
-        </a>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Projects list
+        </div>
+        <div class="panel-body">
+          <div class="list-group">
+            <a href="#" class="list-group-item" v-for="project in projects">
+              <h4 class="list-group-item-heading">{{ project.name }}</h4>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
