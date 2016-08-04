@@ -58,7 +58,7 @@
         <div class="panel-body">
           <div class="list-group">
             <a href="#" class="list-group-item" v-for="project in projects">
-              <h4 class="list-group-item-heading">{{ project.name }}</h4>
+              <h4 class="list-group-item-heading" v-on:click="fetchBuilds(project.name)" >{{ project.name }}</h4>
             </a>
           </div>
         </div>

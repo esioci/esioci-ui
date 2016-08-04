@@ -11,7 +11,7 @@ new Vue({
 
   ready: function () {
     this.fetchProjects();
-    this.fetchBuilds();
+    this.fetchBuilds('default');
   },
 
   methods: {
@@ -27,9 +27,9 @@ new Vue({
           console.log(err);
         });
     },
-    fetchBuilds: function () {
+    fetchBuilds: function (project) {
       var builds = [];
-      this.$http.get('http://localhost:4000/api/v1/default/bld/all')
+      this.$http.get('http://localhost:4000/api/v1/' + project + '/bld/all')
         .success(function (builds) {
           this.$set('builds', builds);
           console.log(builds);
