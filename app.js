@@ -37,6 +37,21 @@ new Vue({
         .error(function (err) {
           console.log(err);
         });
+    },
+    setStatus: function(status){
+      switch(status) {
+        case "CREATED":
+          return "info";
+          break;
+        case "COMPLETED":
+          return "success";
+          break;
+        case "FAILED":
+          return "danger";
+          break;
+        default:
+          return "";
+      }
     }
   }
 });
