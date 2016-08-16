@@ -41,13 +41,34 @@ new Vue({
     setStatus: function(status){
       switch(status) {
         case "CREATED":
-          return "info";
+        return "";
           break;
         case "COMPLETED":
           return "success";
           break;
+        case "RUNNING":
+          return "warning";
+          break;
         case "FAILED":
           return "danger";
+          break;
+        default:
+          return "";
+      }
+    },
+    setStatusIcon: function(status){
+      switch(status) {
+        case "CREATED":
+          return "";
+          break;
+        case "COMPLETED":
+          return "";
+          break;
+        case "RUNNING":
+          return "glyphicon glyphicon-play";
+          break;
+        case "FAILED":
+          return "";
           break;
         default:
           return "";
