@@ -41,7 +41,7 @@
             <tbody>
               <tr v-for="build in builds" class="{{setStatus(build.state)}}">
                 <td>{{ build.id }}</td>
-                <td>{{ build.state }}</td>
+                <td><span class="{{setStatusIcon(build.state)}}"></span> {{ build.state }}</td>
                 <td>{{ build.inserted_at }}</td>
                 <td>{{ build.updated_at }}</td>
               </tr>
