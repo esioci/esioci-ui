@@ -60,6 +60,9 @@
             <a href="#" class="list-group-item" v-for="project in projects">
               <h4 class="list-group-item-heading" v-on:click="fetchBuilds(project.name)" >{{ project.name }}</h4>
             </a>
+            <a href="#" class="list-group-item list-group-item-success disabled">
+              <h4 class="list-group-item-heading"><span class="glyphicon glyphicon-plus"></span>  Add new project</h4>
+            </a>
           </div>
         </div>
       </div>
