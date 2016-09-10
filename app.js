@@ -65,7 +65,7 @@ new Vue({
           return "";
           break;
         case "RUNNING":
-          return "glyphicon glyphicon-play";
+          return "glyphicon glyphicon-refresh glyphicon-spin";
           break;
         case "FAILED":
           return "";
