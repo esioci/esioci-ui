@@ -5,6 +5,7 @@
   <title>EsioCI</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="esioci.css">
   <style>
   .form-control {
     margin-bottom: 10px;
@@ -42,7 +43,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="build in builds" class="{{setStatus(build.state)}}">
+              <tr v-for="build in builds" class="{{build.state}}">
                 <td>{{ build.id }}</td>
                 <td><span class="{{setStatusIcon(build.state)}}"></span> {{ build.state }}</td>
                 <td>{{ build.inserted_at }}</td>
