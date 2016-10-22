@@ -38,24 +38,6 @@ new Vue({
           console.log(err);
         });
     },
-    setStatus: function(status){
-      switch(status) {
-        case "CREATED":
-        return "";
-          break;
-        case "COMPLETED":
-          return "success";
-          break;
-        case "RUNNING":
-          return "warning";
-          break;
-        case "FAILED":
-          return "danger";
-          break;
-        default:
-          return "";
-      }
-    },
     setStatusIcon: function(status){
       switch(status) {
         case "CREATED":
