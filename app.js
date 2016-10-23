@@ -37,24 +37,6 @@ new Vue({
         .error(function (err) {
           console.log(err);
         });
-    },
-    setStatusIcon: function(status){
-      switch(status) {
-        case "CREATED":
-          return "";
-          break;
-        case "COMPLETED":
-          return "";
-          break;
-        case "RUNNING":
-          return "glyphicon glyphicon-refresh glyphicon-spin";
-          break;
-        case "FAILED":
-          return "";
-          break;
-        default:
-          return "";
-      }
     }
   }
 });
