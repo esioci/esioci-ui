@@ -22,3 +22,9 @@
         transform: rotate(359deg);
     }
 }
+.form-control {
+  margin-bottom: 10px;
+}
+.btn-danger {
+  margin-top: 8px;
+}
