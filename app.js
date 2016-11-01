@@ -1,8 +1,10 @@
+/* global Vue */
 Vue.component("projects", {
   data: {
     project: { name: ""},
     projects: [],
   },
+/* eslint-disable quotes */
   template: '\
       <div class="panel panel-default">\
         <div class="panel-heading">\
@@ -20,9 +22,9 @@ Vue.component("projects", {
         </div>\
       </div>\
     </div>',
+/* eslint-enable quotes */
   methods: {
     fetchProjects: function () {
-      var projects = [];
       this.$http.get("/api/v1/default")
         .success(function (projects) {
           this.$set("projects", projects);
@@ -43,6 +45,7 @@ Vue.component("builds", {
     build: { id: "", state: "", inserted_at: "", updated_at: ""},
     builds: [],
   },
+/* eslint-disable quotes */
   template: '\
       <div class="panel panel-default">\
         <div class="panel-heading">\
@@ -77,9 +80,9 @@ Vue.component("builds", {
           </table>\
         </div>\
       </div>',
+/* eslint-enable quotes */
   methods: {
     fetchBuilds: function (project) {
-      var builds = [];
       this.$http.get("/api/v1/" + project + "/bld/all")
         .success(function (builds) {
           this.$set("builds", builds);
@@ -95,7 +98,6 @@ Vue.component("builds", {
   },
 });
 
-var app = new Vue({
+new Vue({
   el: "#esioci",
-
 });
