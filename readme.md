@@ -15,3 +15,6 @@ This is EsioCI - UserInterface
 
 1. Run `npm install`.
 1. Run `npm test`.
+
+## TODO:
+1. call fetchproject and fetchbuilds from other components.

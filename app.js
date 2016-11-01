@@ -1,10 +1,47 @@
+Vue.component("projects", {
+  data: {
+    project: { name: ""},
+    projects: [],
+  },
+  template: '\
+      <div class="panel panel-default">\
+        <div class="panel-heading">\
+          Projects list\
+        </div>\
+        <div class="panel-body">\
+          <div class="list-group">\
+            <a href="#" class="list-group-item" v-for="project in projects">\
+              <h4 class="list-group-item-heading" v-on:click="fetchBuilds(project.name)" >{{ project.name }}</h4>\
+            </a>\
+            <a href="#" class="list-group-item list-group-item-success disabled">\
+              <h4 class="list-group-item-heading"><span class="glyphicon glyphicon-plus"></span>  Add new project</h4>\
+            </a>\
+          </div>\
+        </div>\
+      </div>\
+    </div>',
+  methods: {
+    fetchProjects: function () {
+      var projects = [];
+      this.$http.get("/api/v1/default")
+        .success(function (projects) {
+          this.$set("projects", projects);
+          console.log(projects);
+        })
+        .error(function (err) {
+          console.log(err);
+        });
+    }
+  },
+  ready: function () {
+    this.fetchProjects();
+  },
+})
 
 Vue.component("builds", {
   data: {
     build: { id: "", state: "", inserted_at: "", updated_at: ""},
     builds: [],
-    project: { name: ""},
-    projects: [],
   },
   template: '\
       <div class="panel panel-default">\
@@ -41,17 +78,6 @@ Vue.component("builds", {
         </div>\
       </div>',
   methods: {
-    fetchProjects: function () {
-      var projects = [];
-      this.$http.get("/api/v1/default")
-        .success(function (projects) {
-          this.$set("projects", projects);
-          console.log(projects);
-        })
-        .error(function (err) {
-          console.log(err);
-        });
-    },
     fetchBuilds: function (project) {
       var builds = [];
       this.$http.get("/api/v1/" + project + "/bld/all")
@@ -65,45 +91,11 @@ Vue.component("builds", {
     }
   },
   ready: function () {
-    this.fetchProjects();
     this.fetchBuilds("default");
   },
 })
 
 var app = new Vue({
   el: "#esioci",
-
-  data: {
-  },
-
-  ready: function () {
-    this.fetchProjects();
-    this.fetchBuilds("default");
-  },
-  methods: {
-
-    fetchProjects: function () {
-      var projects = [];
-      this.$http.get("/api/v1/default")
-        .success(function (projects) {
-          this.$set("projects", projects);
-          console.log(projects);
-        })
-        .error(function (err) {
-          console.log(err);
-        });
-    },
-    fetchBuilds: function (project) {
-      var builds = [];
-      this.$http.get("/api/v1/" + project + "/bld/all")
-        .success(function (builds) {
-          this.$set("builds", builds);
-          console.log(builds);
-        })
-        .error(function (err) {
-          console.log(err);
-        });
-    }
-  }
 
 });
