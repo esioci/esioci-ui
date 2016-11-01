@@ -36,7 +36,7 @@ Vue.component("projects", {
   ready: function () {
     this.fetchProjects();
   },
-})
+});
 
 Vue.component("builds", {
   data: {
@@ -93,7 +93,7 @@ Vue.component("builds", {
   ready: function () {
     this.fetchBuilds("default");
   },
-})
+});
 
 var app = new Vue({
   el: "#esioci",
