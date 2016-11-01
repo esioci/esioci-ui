@@ -6,7 +6,8 @@
   "author": "Grzegorz Eliszewski",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "pretest": "node_modules/jshint/bin/jshint app.js test/*.js"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
@@ -26,6 +27,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-jasmine": "^1.0.2",
     "method-override": "^2.3.5",
-    "morgan": "^1.6.1"
+    "morgan": "^1.6.1",
+    "jshint": "^2.9.4"
   }
 }
