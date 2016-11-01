@@ -18,7 +18,7 @@ var app = new Vue({
 
     fetchProjects: function () {
       var projects = [];
-      this.$http.get('http://localhost:4000/api/v1/default')
+      this.$http.get('/api/v1/default')
         .success(function (projects) {
           this.$set('projects', projects);
           console.log(projects);
@@ -29,7 +29,7 @@ var app = new Vue({
     },
     fetchBuilds: function (project) {
       var builds = [];
-      this.$http.get('http://localhost:4000/api/v1/' + project + '/bld/all')
+      this.$http.get('/api/v1/' + project + '/bld/all')
         .success(function (builds) {
           this.$set('builds', builds);
           console.log(builds);
