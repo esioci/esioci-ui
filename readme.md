@@ -8,7 +8,7 @@ This is EsioCI - UserInterface
 
 1. Run `npm install`.
 1. Change `API_URL` variable to pass to Your esioci instance.
-1. Run `node server.js`.
+1. Run `npm start`.
 1. Visit [http://localhost:8080](http://localhost:8080).
 
 ## Developement
