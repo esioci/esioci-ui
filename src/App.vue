@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <hello></hello>
+    <builds></builds>
+    <projects></projects>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello.vue'
-
+import Builds from './components/Builds.vue'
+import Projects from './components/Projects.vue'
 export default {
   name: 'app',
   components: {
-    Hello
+    Builds,
+    Projects
   }
 }
 </script>
