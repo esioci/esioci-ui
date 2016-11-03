@@ -37,25 +37,27 @@
 </template>
 
 <script>
+  var Vue = require('vue');
+  var VueResource = require('vue-resource');
+
+  Vue.use(VueResource);
   export default {
     name: 'builds',
-    data: {
-      build: { id: "", state: "", inserted_at: "", updated_at: ""},
-      builds: [],
+    data: function () {
+      return {
+        builds: [{ id: "", state: "", inserted_at: "", updated_at: ""}],
+      }
     },
     methods: {
-      fetchBuilds: function (project) {
-        this.$http.get("/api/v1/" + project + "/bld/all")
-          .success(function (builds) {
-            this.$set("builds", builds);
-            console.log(builds);
-          })
-          .error(function (err) {
-            console.log(err);
+      fetchBuilds: function(project) {
+        this.$http.get("http://localhost:4000/api/v1/" + project + "/bld/all")
+          .then((response) => {
+            console.log("esio");
+            this.$set(this, 'builds', response.data);
           });
       }
     },
-    ready: function () {
+    created: function () {
       this.fetchBuilds("default");
     },
   }
