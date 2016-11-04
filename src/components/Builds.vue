@@ -23,7 +23,7 @@
               'danger': build.state === 'FAILED'
             }">
               <td>{{ build.id }}</td>
-              <td><span v-bind:class="{"glyphicon glyphicon-refresh glyphicon-spin": build.state === "RUNNING"}"></span> {{ build.state }}</td>
+              <td><span v-bind:class="{'glyphicon glyphicon-refresh glyphicon-spin': build.state === 'RUNNING'}"></span> {{ build.state }}</td>
               <td>{{ build.inserted_at }}</td>
               <td>{{ build.updated_at }}</td>
   <!--             <td><a v-bind:href="{{ build.id }}/build_{{ build.id }}.txt"><span class="glyphicon glyphicon-file" title="get build.log"></span></a></td>
