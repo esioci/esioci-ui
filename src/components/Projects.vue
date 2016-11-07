@@ -1,5 +1,6 @@
 <template>
-  <div class="panel panel-default">
+  <div id="projects">
+    <div class="panel panel-default">
       <div class="panel-heading">
         Projects list
       </div>
@@ -13,6 +14,7 @@
           </a>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
@@ -20,9 +22,10 @@
 export default {
   name: 'projects',
 
-  data: {
-    project: { name: ""},
-    projects: [],
+  data: function () {
+    return {
+      projects: [{ name: "" }],
+    }
   },
   methods: {
     fetchProjects: function () {
