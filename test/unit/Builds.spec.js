@@ -7,7 +7,6 @@ describe('Builds.vue', () => {
       el: document.createElement('div'),
       render: (h) => h(Builds)
     })
-    console.log(vm);
     expect(vm.$el.querySelector('div.panel-heading').textContent).toMatch('Builds list')
   });
 
