@@ -47,7 +47,8 @@
     name: 'builds',
     data: function () {
       return {
-        builds: [{ id: "", state: "", inserted_at: "", updated_at: ""}],
+        //builds: [{ id: "", state: "", inserted_at: "", updated_at: ""}],
+        builds: []
       }
     },
     methods: {

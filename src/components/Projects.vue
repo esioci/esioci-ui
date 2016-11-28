@@ -24,7 +24,7 @@ export default {
 
   data: function () {
     return {
-      projects: [{ name: "" }],
+      projects: [{ name: "default", id: "1" }],
     }
   },
   methods: {
