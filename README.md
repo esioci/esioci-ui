@@ -22,3 +22,7 @@ npm test
 ```
 
 For more information see the [docs for vueify](https://github.com/vuejs/vueify).
+
+## Build dockr container with esioci-ui
+1. Build application: `npm run build`
+1. Build docker container `docker build -t esioci-ui:version .`

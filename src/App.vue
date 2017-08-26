@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="col-sm-6">
-        <builds></builds>
-      </div>
-      <div class="col-sm-4">
-        <projects></projects>
+      <div class="row">
+        <div class="col">
+          <builds></builds>
+        </div>
+        <div class="col">
+          <projects></projects>
+        </div>
       </div>
     </div>
   </div>
