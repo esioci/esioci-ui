@@ -47,12 +47,13 @@
     name: 'builds',
     data: function () {
       return {
-        builds: [{ id: "", state: "", inserted_at: "", updated_at: ""}],
+        //builds: [{ id: "", state: "", inserted_at: "", updated_at: ""}],
+        builds: []
       }
     },
     methods: {
       fetchBuilds: function(project) {
-        this.$http.get("http://localhost:4000/api/v1/" + project + "/bld/all")
+        this.$http.get("http://esioci-api:4000/api/v1/" + project + "/bld/all")
           .then((response) => {
             console.log("esio");
             this.$set(this, 'builds', response.data);
