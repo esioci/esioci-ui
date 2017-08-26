@@ -53,7 +53,7 @@
     },
     methods: {
       fetchBuilds: function(project) {
-        this.$http.get("http://localhost:4000/api/v1/" + project + "/bld/all")
+        this.$http.get("http://esioci-api:4000/api/v1/" + project + "/bld/all")
           .then((response) => {
             console.log("esio");
             this.$set(this, 'builds', response.data);

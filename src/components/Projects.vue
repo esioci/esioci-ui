@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     fetchProjects: function () {
-      this.$http.get("/api/v1/default")
+      this.$http.get("http://esioci-api:4000/api/v1/default")
         .success(function (projects) {
           this.$set("projects", projects);
           console.log(projects);
@@ -41,6 +41,6 @@ export default {
   },
   ready: function () {
     this.fetchProjects();
-  } 
+  }
 }
 </script>
